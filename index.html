@@ -187,11 +187,11 @@ http://www.tooplate.com/view/2094-mason
         $(function () {
             "use strict";
             $('.feeding_posts').slice(0, 10).show();
-            $('#loadmore').on('click', function (e) {
+            $('#loadmore_gallery').on('click', function (e) {
                 e.preventDefault();
                 $('.feeding_posts:hidden').slice(0, 10).slideDown();
                 if ($('.feeding_posts:hidden').length === 0) {
-                    $('#loadmore').replaceWith("<p class='p'>No More</p>");
+                    $('#loadmore_gallery').replaceWith("<p class='p'>No More</p>");
                 }
             });
             $('#top').on('click', function (e) {
