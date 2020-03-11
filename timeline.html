@@ -158,7 +158,7 @@ http://www.tooplate.com/view/2094-mason
             $('.feeding_posts').slice(0, 2).show();
             $('#loadmore').on('click', function (e) {
                 e.preventDefault();
-                $('.feeding_posts:hidden').slice(0, 8).slideDown();
+                $('.feeding_posts:hidden').slice(0, 2).slideDown();
                 if ($('.feeding_posts:hidden').length === 0) {
                     $('#loadmore').replaceWith("<p class='p'>No More</p>");
                 }
