@@ -1,6 +1,6 @@
 /* Feeding Posts Load More*/
 .feeding_posts{
-	display: none;
+	display: block;
 }
 #loadmore_gallery{
 	position: absolute;
