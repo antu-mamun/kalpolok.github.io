@@ -1,11 +1,33 @@
-/* 
-
-Template 2094 Mason
-
-http://www.tooplate.com/view/2094-mason
-
-*/
-
+/* Feeding Posts Load More*/
+.feeding_posts{
+	display: none;
+}
+#loadmore {
+    margin: 5px auto;
+    padding: 8px 0;
+    width: 50%;
+    background: #c12b2b;
+    text-align: center;
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+#loadmore:hover {
+    background: #333;
+}
+#top a {
+    color: #c12b2b;
+    position: fixed;
+    bottom: 5px;
+    right: 15px;
+    text-decoration: none;
+    display: none;
+}
+/* ends Feeding Posts Load More*/
 a:focus {
 	color: #666;
 	outline: none;
