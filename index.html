@@ -134,11 +134,11 @@ http://www.tooplate.com/view/2094-mason
                         <div class="grid-item feeding_posts"><img src="img/gallery-img-11-07.jpg" alt="Image"></div>
                         <div class="grid-item feeding_posts"><img src="img/gallery-img-23-05.jpg" alt="Image"></div>
                         
-                        <a href="#" id="loadmore">Load More</a>
-                        <p id="top">
-                          <a href="#top">Go To Top</a>
-                        </p>
-                    </div>                    
+                    </div>  
+                    <a href="#" id="loadmore">Load More</a>
+                    <p id="top">
+                      <a href="#top">Go To Top</a>
+                    </p>
                 </div> <!-- tm-main-content -->
             </div>
 
@@ -202,7 +202,7 @@ http://www.tooplate.com/view/2094-mason
                 return false;
             });
             $(window).scroll(function () {
-                if ($(this).scrollTop() > 80) {
+                if ($(this).scrollTop() > 79) {
                     $('#top a').fadeIn();
                 } else {
                     $('#top a').fadeOut();
