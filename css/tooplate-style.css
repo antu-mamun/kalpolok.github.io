@@ -254,7 +254,7 @@ body {
 	font-size: 1.4rem;
 }
 
-.tm-gallery-container {	overflow-y: hidden; }
+.tm-gallery-container {	overflow-y: scroll; }
 
 .grid {
   max-width: 1165px;
