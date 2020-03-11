@@ -2,22 +2,6 @@
 .feeding_posts{
 	display: none;
 }
-#loadmore_gallery{
-	position: absolute;
-	bottom:0;
-	margin: 5px auto;
-	padding: 8px 0;
-	width: 50%;
-	background: #c12b2b;
-	text-align: center;
-	color: #fff;
-	display: block;
-	text-decoration: none;
-	-webkit-transition: all 0.5s ease-in-out;
-	-moz-transition: all 0.5s ease-in-out;
-	-o-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
-}
 #loadmore {
 	margin: 5px auto;
 	padding: 8px 0;
