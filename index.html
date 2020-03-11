@@ -53,22 +53,27 @@ http://www.tooplate.com/view/2094-mason
                 
                 <div class="tm-main-content tm-gallery-container">                    
                     <div class="grid">                                                    
-                        <div class="grid-item"><img src="img/gallery-img-23-01.jpg" alt="Image"></div>
-                        <div class="grid-item"><img src="img/gallery-img-11-01.jpg" alt="Image"></div>
-                        <div class="grid-item"><img src="img/gallery-img-12-01.jpg" alt="Image"></div>
-                        <div class="grid-item"><img src="img/gallery-img-11-02.jpg" alt="Image"></div>                        
-                        <div class="grid-item"><img src="img/gallery-img-12-02.jpg" alt="Image"></div>
-                        <div class="grid-item"><img src="img/gallery-img-23-02.jpg" alt="Image"></div>
-                        <div class="grid-item"><img src="img/gallery-img-11-03.jpg" alt="Image"></div>
-                        <div class="grid-item"><img src="img/gallery-img-23-03.jpg" alt="Image"></div>                        
-                        <div class="grid-item"><img src="img/gallery-img-11-04.jpg" alt="Image"></div>
-                        <div class="grid-item"><img src="img/gallery-img-11-05.jpg" alt="Image"></div>
-                        <div class="grid-item"><img src="img/gallery-img-12-03.jpg" alt="Image"></div>
-                        <div class="grid-item"><img src="img/gallery-img-12-04.jpg" alt="Image"></div>
-                        <div class="grid-item"><img src="img/gallery-img-11-06.jpg" alt="Image"></div>
-                        <div class="grid-item"><img src="img/gallery-img-23-04.jpg" alt="Image"></div>
-                        <div class="grid-item"><img src="img/gallery-img-11-07.jpg" alt="Image"></div>
-                        <div class="grid-item"><img src="img/gallery-img-23-05.jpg" alt="Image"></div>
+                        <div class="grid-item feeding_posts"><img src="img/gallery-img-23-01.jpg" alt="Image"></div>
+                        <div class="grid-item feeding_posts"><img src="img/gallery-img-11-01.jpg" alt="Image"></div>
+                        <div class="grid-item feeding_posts"><img src="img/gallery-img-12-01.jpg" alt="Image"></div>
+                        <div class="grid-item feeding_posts"><img src="img/gallery-img-11-02.jpg" alt="Image"></div>                        
+                        <div class="grid-item feeding_posts"><img src="img/gallery-img-12-02.jpg" alt="Image"></div>
+                        <div class="grid-item feeding_posts"><img src="img/gallery-img-23-02.jpg" alt="Image"></div>
+                        <div class="grid-item feeding_posts"><img src="img/gallery-img-11-03.jpg" alt="Image"></div>
+                        <div class="grid-item feeding_posts"><img src="img/gallery-img-23-03.jpg" alt="Image"></div>                        
+                        <div class="grid-item feeding_posts"><img src="img/gallery-img-11-04.jpg" alt="Image"></div>
+                        <div class="grid-item feeding_posts"><img src="img/gallery-img-11-05.jpg" alt="Image"></div>
+                        <div class="grid-item feeding_posts"><img src="img/gallery-img-12-03.jpg" alt="Image"></div>
+                        <div class="grid-item feeding_posts"><img src="img/gallery-img-12-04.jpg" alt="Image"></div>
+                        <div class="grid-item feeding_posts"><img src="img/gallery-img-11-06.jpg" alt="Image"></div>
+                        <div class="grid-item feeding_posts"><img src="img/gallery-img-23-04.jpg" alt="Image"></div>
+                        <div class="grid-item feeding_posts"><img src="img/gallery-img-11-07.jpg" alt="Image"></div>
+                        <div class="grid-item feeding_posts"><img src="img/gallery-img-23-05.jpg" alt="Image"></div>
+                        
+                        <a href="#" id="loadmore">Load More</a>
+                        <p id="top">
+                          <a href="#top">Go To Top</a>
+                        </p>
                     </div>                    
                 </div> <!-- tm-main-content -->
             </div>
@@ -114,7 +119,32 @@ http://www.tooplate.com/view/2094-mason
             // Update the current year in copyright
             $('.tm-current-year').text(new Date().getFullYear());        
         });
-
+         /*Load More*/
+        $(function () {
+            "use strict";
+            $('.feeding_posts').slice(0, 2).show();
+            $('#loadmore').on('click', function (e) {
+                e.preventDefault();
+                $('.feeding_posts:hidden').slice(0, 2).slideDown();
+                if ($('.feeding_posts:hidden').length === 0) {
+                    $('#loadmore').replaceWith("<p class='p'>No More</p>");
+                }
+            });
+            $('#top').on('click', function (e) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 600);
+                return false;
+            });
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 4) {
+                    $('#top a').fadeIn();
+                } else {
+                    $('#top a').fadeOut();
+                }
+            });
+        });
         </script>
     </body>
     </html>
