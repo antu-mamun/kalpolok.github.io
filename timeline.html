@@ -53,7 +53,7 @@ http://www.tooplate.com/view/2094-mason
                 
                 <div class="tm-main-content">
 
-                    <div class="row mb-5">
+                    <div class="row mb-5 feeding_posts">
                         <div class="media tm-flexbox-ie-fix tm-width-ie-fix">
                             <div class="tm-media-img-container">
                                 <div class="text-center pt-31 pb-31 tm-timeline-date tm-bg-custom">21 November 2017</div>
@@ -73,7 +73,7 @@ http://www.tooplate.com/view/2094-mason
                         </div>
                     </div> <!-- row -->
 
-                    <div class="row mb-5">
+                    <div class="row mb-5 feeding_posts">
                         <div class="media tm-flexbox-ie-fix tm-width-ie-fix">
                             <div class="tm-media-img-container">
                                 <div class="text-center pt-31 pb-31 tm-timeline-date tm-bg-custom">16 November 2017</div>
@@ -93,7 +93,7 @@ http://www.tooplate.com/view/2094-mason
                         </div>
                     </div> <!-- row -->
 
-                    <div class="row mb-5">
+                    <div class="row mb-5 feeding_posts">
                         <div class="media tm-flexbox-ie-fix tm-width-ie-fix">
                             <div class="tm-media-img-container">
                                 <div class="text-center pt-31 pb-31 tm-timeline-date tm-bg-custom">22 October 2017</div>
@@ -111,7 +111,7 @@ http://www.tooplate.com/view/2094-mason
                         </div>
                     </div> <!-- row -->
 
-                    <div class="row mb-5">
+                    <div class="row mb-5 feeding_posts">
                         <div class="media tm-flexbox-ie-fix tm-width-ie-fix">
                             <div class="tm-media-img-container">
                                 <div class="text-center pt-31 pb-31 tm-timeline-date tm-bg-custom">18 October 2017</div>
@@ -127,6 +127,12 @@ http://www.tooplate.com/view/2094-mason
                           </div>
                         </div>
                     </div> <!-- row -->
+                        
+                    <a href="#" id="loadmore">Load More</a>
+
+                    <p id="top">
+                      <a href="#top">Go To Top</a>
+                    </p>
                 </div>
             </div>
 
@@ -145,7 +151,34 @@ http://www.tooplate.com/view/2094-mason
             // Update the current year in copyright
             $('.tm-current-year').text(new Date().getFullYear());        
         });
-    
+        /*global $, document, alert, console*/
+        /*Load More*/
+        $(function () {
+            "use strict";
+            $('.feeding_posts').slice(0, 2).show();
+            $('#loadmore').on('click', function (e) {
+                e.preventDefault();
+                $('.feeding_posts:hidden').slice(0, 8).slideDown();
+                if ($('.feeding_posts:hidden').length === 0) {
+                    $('#loadmore').replaceWith("<p class='p'>No More</p>");
+                }
+            });
+            $('#top').on('click', function (e) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 600);
+                return false;
+            });
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 4) {
+                    $('#top a').fadeIn();
+                } else {
+                    $('#top a').fadeOut();
+                }
+            });
+        });
         </script>
+          
     </body>
     </html>
